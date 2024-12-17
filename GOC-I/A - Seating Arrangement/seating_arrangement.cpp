@@ -3,9 +3,6 @@ using namespace std;
 using ll = long long;
 int main(){
 
-    freopen("input/input000.txt", "r", stdin);
-    freopen("output/output000.txt", "w", stdout);
-
     int t; cin>>t;
     while(t--){
 
