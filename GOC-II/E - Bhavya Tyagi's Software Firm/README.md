@@ -14,7 +14,7 @@ $$
 This cost function can be called in $O(1)$ time complexity by pre-computing a prefix sum array for the array $d[]$
 
 The above dp has $n \times k$ states and has $n$ transitions for each state hence the time complexity of $O(n^2 k)$.<br>
-The code for the same is added in the file [tle.cpp](\tle.cpp) but it obviously results in a TLE.
+The code for the same is added in the file [tle.cpp](https://github.com/GoMyno-IIT-Goa/Game-Of-Codes-2024/blob/main/GOC-II/E%20-%20Bhavya%20Tyagi's%20Software%20Firm/tle.cpp) but it obviously results in a TLE.
 
 ---
 
