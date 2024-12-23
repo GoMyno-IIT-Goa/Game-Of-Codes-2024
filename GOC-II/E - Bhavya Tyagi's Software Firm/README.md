@@ -2,14 +2,16 @@
 
 First lets solve the problem using simple dp in $O(n^2 k)$. Let $dp[i][j]$ denote the minimum total time-factor for the first $j$ sub-tasks given that we have $i$ developers.
 Then,
-$$
+
+$
 dp[i, j] = \min_{0 \leq t \leq j} \, \{dp[i-1, t-1] + C(t, j)\}
-$$
+$
 
 where $C(t, j)$ is a cost function of the subarray $a[t], a[t+1], .... , a[j]$ or in this case,
-$$
+
+$
 C(t, j) = (j-t+1) * (d[t] + d[t+1] + ... + d[j])
-$$
+$
 
 This cost function can be called in $O(1)$ time complexity by pre-computing a prefix sum array for the array $d[]$
 
