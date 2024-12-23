@@ -7,7 +7,7 @@ If there exists at least one pair that cannot be made equal following the given 
 
 ### Key Observation
 
-For a pair of characters to become equal after transformation, the distance between their ASCII values must either be \( 0 \) or \( 2 \).
+For a pair of characters to become equal after transformation, the distance between their ASCII values must either be $0$ or $2$.
 
 ---
 
