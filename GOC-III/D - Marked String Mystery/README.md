@@ -26,4 +26,5 @@ The same idea can be applied to the original problem as well. Let $dp[0] = 1$ an
 $$
 dp[i+1] = \sum_{j = k}^{i-1} dp[j]
 $$
+
 where $k$ is the largest integer such that $S[i] = S[k]$ and $k < i$ (or $k = 0$ if no such integer exists).

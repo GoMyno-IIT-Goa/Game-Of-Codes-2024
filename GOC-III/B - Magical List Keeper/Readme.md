@@ -5,7 +5,7 @@ First of all, if we process the queries with an array, it will lead to TLE. Let'
 - `Query 2`: $O(n)$
 - `Query 3`: $O(n \log{n})$
 
-When we are given $C/2$ queries of `Query 1` and $C/2$ queries of `Query 3`, it will cost about $O(Q^2 \log{Q})$. We can optimize the time complexity of `Query 2` to O(1) using a deque but, the overall process would still lead to a TLE.
+When we are given $C/2$ queries of `Query 1` and $C/2$ queries of `Query 3`, it will cost about $O(C^2 \log{C})$. We can optimize the time complexity of `Query 2` to O(1) using a deque but, the overall process would still lead to a TLE.
 
 > ### Observations:
 > - for `Query 2` we only need to access the smallest element or the first added element (depending on the order of the queries).
