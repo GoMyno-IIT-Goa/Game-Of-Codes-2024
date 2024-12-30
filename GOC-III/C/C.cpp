@@ -2,31 +2,25 @@
 using namespace std;
 using ll = long long;
 
-int longest_common_subarray(vector<int> &arr, vector<int> &brr){
+int longest_common_subarray(vector<int> &nums1, vector<int> &nums2){
 
-    int n = arr.size(), m = brr.size();
+    int n = nums1.size(), m = nums2.size();
+    int dp[n + 1][m + 1];
 
-    vector<int> dp(m + 1, 0);
+    memset(dp, 0, sizeof(dp));
+
     int ans = 0;
-
-    for (int i = 0; i < n; i++)
+    for (int i = 1; i <= n; i++)
     {
-        for (int j = m - 1; j >= 0; j--)
+        for (int j = 1; j <= m; j++)
         {
-
-            if (arr[i] == brr[j])
-            {
-                dp[j + 1] = 1 + dp[j];
-            }
+            if (nums1[i - 1] == nums2[j - 1])
+                dp[i][j] = dp[i - 1][j - 1] + 1;
             else
-            {
-                dp[j + 1] = 0;
-            }
-
-            ans = max(ans, dp[j + 1]);
+                dp[i][j] = 0;
+            ans = max(ans, dp[i][j]);
         }
     }
-
     return ans;
 }
 int main(){
