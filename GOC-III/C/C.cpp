@@ -7,6 +7,8 @@ int longest_common_subarray(vector<int> &nums1, vector<int> &nums2){
     int n = nums1.size(), m = nums2.size();
     int dp[n + 1][m + 1];
 
+    // dp[i][j] denotes the length of longest common subarray ending at ith index in nums1 and jth index in nums2. 
+
     memset(dp, 0, sizeof(dp));
 
     int ans = 0;
@@ -14,11 +16,13 @@ int longest_common_subarray(vector<int> &nums1, vector<int> &nums2){
     {
         for (int j = 1; j <= m; j++)
         {
+            // if nums1[curr] == nums2[curr], then we add 1 to the longest common subarray ending at (i-1)th index in nums1 and (j-1)th index in nums2
             if (nums1[i - 1] == nums2[j - 1])
                 dp[i][j] = dp[i - 1][j - 1] + 1;
             else
+                // if both numbers are not equal, no common subarray exists ending at ith index of nums1 and jth index of nums2
                 dp[i][j] = 0;
-            ans = max(ans, dp[i][j]);
+            ans = max(ans, dp[i][j]); // maximise the length of subarray
         }
     }
     return ans;
@@ -43,6 +47,7 @@ int main(){
 
         int ans = longest_common_subarray(goldi, soldi);
 
+        // since, we want total length, i.e., length of palindrome, we have to double the length of longest common subarray 
         cout << ans * 2 << endl; 
     }
 }
